@@ -5,3 +5,4 @@
 <script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js"></script>
 <script src="/assets/backend/js/scripts.bundle.js"></script>
 <script src="/assets/backend/js/pages/widgets.js"></script>
+@stack('js')
