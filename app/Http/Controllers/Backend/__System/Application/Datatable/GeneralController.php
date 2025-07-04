@@ -7,6 +7,9 @@ use App\Http\Traits\Backend\__System\Controllers\Datatable\DefaultController;
 use App\Http\Traits\Backend\__System\Controllers\Datatable\ExtensionController;
 use DataTables;
 
+use App\Http\Requests\Backend\__System\Application\Datatable\General\StoreRequest;
+use App\Http\Requests\Backend\__System\Application\Datatable\General\UpdateRequest;
+
 class GeneralController extends Controller {
 
   use DefaultController;
@@ -40,16 +43,29 @@ class GeneralController extends Controller {
     return view($this->path . 'index', compact('model'));
   }
 
-  public function store(Request $request) {
-    $validated = $request->validate($this->RequestStore);
-    $store = $request->all();
-    foreach ($request->date as $data) {
-      $store['date'] = \Carbon\Carbon::now()->format('Y') . '-'. $request->month . '-' . $data . ' ' . $request->time;
-      $this->model::create($store);
-    }
+  /**
+  **************************************************
+  * @return STORE
+  **************************************************
+  **/
 
+  public function store(StoreRequest $request) {
+    $store = $request->all();
+    $this->model::create($store);
     return redirect($this->url)->with('success', __('default.notification.success.item-created'));
   }
 
+  /**
+  **************************************************
+  * @return UPDATE
+  **************************************************
+  **/
+
+  public function update(UpdateRequest $request, $id) {
+    $data = $this->model::findOrFail($id);
+    $update = $request->all();
+    $data->update($update);
+    return redirect($this->url)->with('success', __('default.notification.success.item-updated'));
+  }
 
 }
