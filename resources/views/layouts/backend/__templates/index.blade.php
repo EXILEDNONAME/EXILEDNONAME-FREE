@@ -7,25 +7,25 @@
 @section('content')
 <div class="row">
   <div class="col-lg-12">
-    <div class="card card-custom" data-card="true" id="kt_card_1">
+    <div class="card card-custom gutter-b" data-card="true" id="kt_card_1">
       <div class="card-header">
         <div class="card-title">
           <h3 class="card-label"> Main </h3>
         </div>
         <div class="card-toolbar">
-          <a href="{{ URL::Current() }}/create" class="btn btn-icon btn-xs btn-hover-light-primary" data-toggle="tooltip" title="{{ __('default.label.create') }}"><i class="fas fa-plus"></i></a>
-          <a id="table-refresh" class="btn btn-icon btn-xs btn-hover-light-primary" data-toggle="tooltip" title="{{ __('default.label.refresh') }}"><i class="fas fa-sync-alt"></i></a>
-          <div data-toggle="collapse" data-target="#collapse-filter" aria-expanded="true"><a class="btn btn-icon btn-xs btn-hover-light-primary" data-toggle="tooltip" title="{{ __('default.label.filter./') }}"><i class="fas fa-filter"></i></a></div>
+          <a href="{{ URL::Current() }}/create" class="btn btn-icon btn-xs btn-hover-light-primary" title="{{ __('default.label.create') }}"><i class="fas fa-plus"></i></a>
+          <a id="table-refresh" class="btn btn-icon btn-xs btn-hover-light-primary" title="{{ __('default.label.refresh') }}"><i class="fas fa-sync-alt"></i></a>
+          <div data-toggle="collapse" data-target="#collapse-filter"><a class="btn btn-icon btn-xs btn-hover-light-primary" title="{{ __('default.label.filter./') }}"><i class="fas fa-filter"></i></a></div>
           <div class="dropdown dropdown-inline" bis_skin_checked="1">
-            <button type="button" class="btn btn-clean btn-xs btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-clean btn-xs btn-icon btn-icon-md" data-toggle="dropdown">
               <i class="fas fa-download"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right" bis_skin_checked="1">
               <ul class="navi navi-hover py-5">
-                <li class="navi-item" data-toggle="tooltip" data-original-title="{{ __('default.label.export.description.copy') }}"><a href="javascript:void(0);" class="navi-link" id="export_copy"><i class="navi-icon fa fa-copy"></i> {{ __('default.label.export.copy') }} </a></li>
-                <li class="navi-item" data-toggle="tooltip" data-original-title="{{ __('default.label.export.description.excel') }}"><a href="javascript:void(0);" class="navi-link" id="export_excel"><i class="navi-icon fa fa-file-excel"></i> {{ __('default.label.export.excel') }} </a></li>
-                <li class="navi-item" data-toggle="tooltip" data-original-title="{{ __('default.label.export.description.pdf') }}"><a href="javascript:void(0);" class="navi-link" id="export_pdf"><i class="navi-icon fa fa-file-pdf"></i> {{ __('default.label.export.pdf') }} </a></li>
-                <li class="navi-item" data-toggle="tooltip" data-original-title="{{ __('default.label.export.description.print') }}"><a href="javascript:void(0);" class="navi-link" id="export_print"><i class="navi-icon fa fa-print"></i> {{ __('default.label.export.print') }} </a></li>
+                <li class="navi-item" title="{{ __('default.label.export.description-copy') }}"><a href="javascript:void(0);" class="navi-link" id="export_copy"><i class="navi-icon fa fa-copy"></i> {{ __('default.label.export.copy') }} </a></li>
+                <li class="navi-item" title="{{ __('default.label.export.description-excel') }}"><a href="javascript:void(0);" class="navi-link" id="export_excel"><i class="navi-icon fa fa-file-excel"></i> {{ __('default.label.export.excel') }} </a></li>
+                <li class="navi-item" title="{{ __('default.label.export.description-pdf') }}"><a href="javascript:void(0);" class="navi-link" id="export_pdf"><i class="navi-icon fa fa-file-pdf"></i> {{ __('default.label.export.pdf') }} </a></li>
+                <li class="navi-item" title="{{ __('default.label.export.description-print') }}"><a href="javascript:void(0);" class="navi-link" id="export_print"><i class="navi-icon fa fa-print"></i> {{ __('default.label.export.print') }} </a></li>
               </ul>
             </div>
           </div>
@@ -48,7 +48,6 @@
       </div>
     </div>
   </div>
-
 </div>
 @endsection
 
